@@ -1,0 +1,6 @@
+*.py[co]
+dist/*
+*.egg-info
+.coverage
+.cache/*
+public/
