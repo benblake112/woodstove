@@ -1,11 +1,13 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+import woodstove
 
+requires=['bottle', 'six']
 
 setup(
     name='woodstove',
-    version='0.1.0',
+    version=woodstove.__version__,
     description='A framework for writing HTTP service APIs',
-    author='Richard Marshall',
+    author=woodstove.__author__,
     author_email='richard.marshall@iacpub.com',
     url='https://github.com/richardmarshall/woodstove',
     classifiers=[
@@ -24,15 +26,8 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Server',
         'Topic :: Software Development :: Libraries :: Application Frameworks',
     ],
-    install_requires=[
-        'bottle',
-    ],
-    extras_require={
-        'db': ["peewee"],
-    },
-    packages=[
-        'woodstove',
-        'woodstove.mgt',
-        'woodstove.plugins',
-    ],
+    requires=requires,
+    install_requires=requires,
+    extras_require={'db': ["peewee"]},
+    packages=find_packages(),
 )
