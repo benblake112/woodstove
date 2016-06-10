@@ -2,13 +2,14 @@
 #
 # License: Apache (see LICENSE for details)
 import unittest
+from copy import copy
 from woodstove import arguments, exceptions
 
 class TestArgument(unittest.TestCase):
     def test_argument_correct_type(self):
         args = {'foo': 1}
         a = arguments.Argument('foo', (int,))
-        self.assertDictEqual(a.check(args), args)
+        self.assertDictEqual(a.check(copy(args)), args)
 
     def test_argument_incorrect_type(self):
         a = arguments.Argument('foo', (int,))
@@ -38,30 +39,30 @@ class TestStringArgument(unittest.TestCase):
     def test_string(self):
         args = {'foo': 'bar'}
         a = arguments.String('foo')
-        self.assertDictEqual(args, a.check(args))
+        self.assertDictEqual(args, a.check(copy(args)))
 
 class TestIntegerArgument(unittest.TestCase):
     def test_integer(self):
         args = {'foo': 1}
         a = arguments.Integer('foo')
-        self.assertDictEqual(args, a.check(args))
+        self.assertDictEqual(args, a.check(copy(args)))
 
 class TestFloatArgument(unittest.TestCase):
     def test_float(self):
         args = {'foo': 1.5}
         a = arguments.Float('foo')
-        self.assertDictEqual(args, a.check(args))
+        self.assertDictEqual(args, a.check(copy(args)))
 
 class TestNumberArgument(unittest.TestCase):
     def test_float(self):
         args1 = {'foo': 1}
         args2 = {'foo': 1.5}
         a = arguments.Number('foo')
-        self.assertDictEqual(args1, a.check(args1))
-        self.assertDictEqual(args2, a.check(args2))
+        self.assertDictEqual(args1, a.check(copy(args1)))
+        self.assertDictEqual(args2, a.check(copy(args2)))
 
 class TestBoolArgument(unittest.TestCase):
     def test_bool(self):
         args = {'foo': False}
         a = arguments.Bool('foo')
-        self.assertDictEqual(args, a.check(args))
+        self.assertDictEqual(args, a.check(copy(args)))

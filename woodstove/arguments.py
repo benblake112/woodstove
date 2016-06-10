@@ -424,12 +424,10 @@ def hook_type(spec, arg, func, opts):
 
     for t in spec.type:
         if isinstance(arg, t):
-            return
+            return arg
 
     raise exceptions.ArgumentException("%s: %r is not %r" % (spec.key,
                                        type(arg), spec.type))
-
-    return arg
 
 
 def hook_regex(spec, arg, func, opts):
