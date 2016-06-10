@@ -1,3 +1,6 @@
+# Copyright (C) 2016 IAC Publishing Labs. All rights reserved.
+#
+# License: Apache (see LICENSE for details)
 import peewee
 from playhouse import db_url
 from woodstove import conf, exceptions

@@ -1,3 +1,6 @@
+# Copyright (C) 2016 IAC Publishing Labs. All rights reserved.
+#
+# License: Apache (see LICENSE for details)
 '''
 Argument validator
 

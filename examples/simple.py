@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Copyright (C) 2016 IAC Publishing Labs. All rights reserved.
+#
+# License: Apache (see LICENSE for details)
 import sys
 from woodstove import app, server, log, arguments
 
